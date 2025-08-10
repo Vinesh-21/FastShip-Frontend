@@ -46,19 +46,16 @@ export async function patchUpdateShipments(data: any) {
   data = Object.fromEntries(
     Object.entries(data).filter(([_, value]) => value !== "")
   );
-  console.log("data:", data);
   const { shipment_id: id, ...restOfdata } = data;
-  console.log("shipment_id:", id);
-  console.log("restofdata:", restOfdata);
   return await api.shipment.updateShipment({ id }, restOfdata);
 }
 
-// export const postForgotPassword = (
-//   userType: "seller" | "partner",
-//   email: string
-// ) => {
-//   return api.instance.post(`/auth/${userType}/forgot-password`, { email });
-// };
+export const postForgotPassword = (userType: UserType, email: string) => {
+  return api.instance.post(
+    `${import.meta.env.VITE_BACKEND}/${userType}/forgot-password`,
+    { email }
+  );
+};
 
 export async function signup(
   mode: UserType | undefined,

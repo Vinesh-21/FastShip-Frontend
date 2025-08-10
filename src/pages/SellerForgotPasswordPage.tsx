@@ -4,6 +4,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import axios, { AxiosError } from "axios";
 import toast from "react-hot-toast";
+import { postForgotPassword } from "@/services/apiHelpers";
+import { UserType } from "@/lib/client";
 
 export default function PartnerForgotPasswordPage() {
   const [email, setEmail] = useState<string>("");
@@ -12,11 +14,7 @@ export default function PartnerForgotPasswordPage() {
   async function resetPassword(email: string) {
     setIsLoading(() => true);
     try {
-      const res = await axios.get(
-        `${
-          import.meta.env.VITE_BACKEND_URL || "http://127.0.0.1:8000/"
-        }partner/forgot_password?email=${email}`
-      );
+      const res = await postForgotPassword(UserType.Seller, email);
       toast.success(res.data.detail), { duration: 1000 * 60 };
       setIsSent(() => true);
     } catch (error) {
