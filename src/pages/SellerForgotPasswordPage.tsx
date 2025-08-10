@@ -37,7 +37,7 @@ export default function PartnerForgotPasswordPage() {
         onSubmit={handleSubmit}
         className="w-[70%] lg:w-[40%] space-y-4 bg-white p-6 rounded shadow"
       >
-        <h2 className="text-xl font-bold">Partner Forgot Password</h2>
+        <h2 className="text-xl font-bold">Seller Forgot Password</h2>
 
         <div className="flex flex-col gap-2">
           <Label htmlFor="email">Email</Label>

@@ -19,8 +19,6 @@ export function calculateOrderStats(
     cancelled: 0,
   };
 
-  console.log("Shipments:", shipments);
-
   if (shipments === undefined) return stats;
 
   for (const shipment of shipments) {

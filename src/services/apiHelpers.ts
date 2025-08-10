@@ -51,9 +51,9 @@ export async function patchUpdateShipments(data: any) {
 }
 
 export const postForgotPassword = (userType: UserType, email: string) => {
-  return api.instance.post(
-    `${import.meta.env.VITE_BACKEND}/${userType}/forgot-password`,
-    { email }
+  return api.instance.get(
+    `${import.meta.env.VITE_BACKEND_URL}/${userType}/forgot_password`,
+    { params: { email } }
   );
 };
 
