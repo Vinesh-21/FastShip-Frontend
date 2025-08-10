@@ -1,6 +1,5 @@
 import { SignupForm } from "@/components/Signup";
 import { UserType } from "@/lib/client";
-import React from "react";
 
 function SellerSignup() {
   return (

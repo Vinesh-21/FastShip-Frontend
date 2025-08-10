@@ -51,7 +51,10 @@ function AccountPage() {
             />
           </div>
           <div className="w-full">
-            <Button disabled={isPendingLogout} onClick={() => logoutUser()}>
+            <Button
+              disabled={isPendingLogout}
+              onClick={() => logoutUser(user!)}
+            >
               Logout
             </Button>
           </div>

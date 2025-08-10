@@ -64,11 +64,6 @@ function UpdateShipment() {
 
   useEffect(() => {
     if (shipmentData?.data) {
-      const rawDelivery = shipmentData.data.estimated_delivery;
-
-      //   const formattedDelivery = rawDelivery
-      //     ? new Date(rawDelivery).toISOString().slice(0, 16)
-      //     : "";
       reset({
         shipment_id: shipmentData.data.id || "",
         description: lastTimelineEntry?.description || "",

@@ -5,10 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 import { useMutation } from "@tanstack/react-query";
-import { useAuth } from "@/contexts/AuthContext";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router";
-import type { userType } from "@/types/userType";
 import type { AxiosError } from "axios";
 import { signup } from "@/services/apiHelpers";
 import {
@@ -17,20 +15,20 @@ import {
   type SellerCreate,
 } from "@/lib/client";
 
-type PartnerSignupData = {
-  email: string;
-  max_handling_capacity: number;
-  name: string;
-  password: string;
-  serviceable_zip_codes: number[]; // now number[]
-};
+// type PartnerSignupData = {
+//   email: string;
+//   max_handling_capacity: number;
+//   name: string;
+//   password: string;
+//   serviceable_zip_codes: number[]; // now number[]
+// };
 
-type SellerSignupData = {
-  email: string;
-  name: string;
-  password: string;
-  zip_code: number;
-};
+// type SellerSignupData = {
+//   email: string;
+//   name: string;
+//   password: string;
+//   zip_code: number;
+// };
 
 export function SignupForm({
   className,
