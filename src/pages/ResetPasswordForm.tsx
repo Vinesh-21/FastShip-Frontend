@@ -42,8 +42,8 @@ export default function ResetPasswordForm({ mode }: { mode: userType }) {
 
       const url =
         mode === "seller"
-          ? `${BACKEND}seller/reset_password`
-          : `${BACKEND}partner/reset_password`;
+          ? `${BACKEND}/seller/reset_password`
+          : `${BACKEND}/partner/reset_password`;
 
       const formData = new FormData();
       formData.append("password", password);
